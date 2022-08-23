@@ -5,7 +5,8 @@ function display(player){
     const olBody = document.getElementById('player-list');
     olBody.innerHTML = "";
     for(let i = 0; i < player.length; i++){
-        // console.log(playerListArray[i]);
+        
+
         const name = playerListArray[i].playerName;
         
         const li = document.createElement("li");
@@ -14,13 +15,11 @@ function display(player){
         ${name}
         `
         olBody.appendChild(li);
+        
     }
 }
 
 function addPlayerList(element){
-    // console.log(element.parentNode.children);
-    // console.log(element.parentNode.children[0]);
-    // console.log(element.parentNode.children[1]);
     const playerOne = element.parentNode.children[0].innerText;
 
     const playerObj = {
@@ -29,11 +28,10 @@ function addPlayerList(element){
     }
 
     playerListArray.push(playerObj);
-    // console.log(playerListArray);
-
-    // document.getElementById('player-list').innerText = playerOne;
-    
     display(playerListArray);
+
+    element.disabled = true;
+    
 }
 
 document.getElementById('btn-calculate').addEventListener('click', function(){
@@ -59,10 +57,3 @@ document.getElementById('btn-total').addEventListener('click', function(){
     document.getElementById('total-team-cost').innerText = totalTeamCost;
 
 })
-
-
-// function playerCost(){
-//     const playerQuantity = playerListArray.length;
-//     const pricePerPlayer = document.getElementById('price-per-player');
-//     const calculate = playerQuantity * pricePerPlayer;
-// }
