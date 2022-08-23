@@ -8,8 +8,13 @@ function display(player){
         
 
         const name = playerListArray[i].playerName;
+
         
         const li = document.createElement("li");
+        if(i === 5){
+            alert("You cannot add player more then Five");
+            return false;
+        }
 
         li.innerHTML = `
         ${name}
@@ -31,6 +36,7 @@ function addPlayerList(element){
     display(playerListArray);
 
     element.disabled = true;
+    element.style.backgroundColor = 'white';
     
 }
 
